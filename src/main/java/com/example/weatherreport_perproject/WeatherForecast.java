@@ -1,18 +1,19 @@
 package com.example.weatherreport_perproject;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "weather")
 public class WeatherForecast {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
 
+    @Column
     private String city;
+    @Column
     private double temperature;
+    @Column
     private double humidity;
 
     public long getId(){

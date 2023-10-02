@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Прогноз Погоды</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .welcome-message {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .city-input {
+            padding: 10px;
+            font-size: 1em;
+            margin-bottom: 20px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container">
+    <div class="welcome-message">ДОБРО ПОЖАЛОВАТЬ, ВЫБЕРИТЕ ГОРОД</div>
+    <input class="city-input" type="text" placeholder="Введите ваш город">
+    <button class="submit-button">Узнать погоду</button>
+</div>
+</body>
+
+</html>
