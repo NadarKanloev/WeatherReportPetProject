@@ -8,7 +8,6 @@ public class WeatherForecast {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
     private long id;
-
     @Column
     private String city;
     @Column
