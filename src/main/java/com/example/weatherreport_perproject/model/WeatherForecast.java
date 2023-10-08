@@ -1,6 +1,8 @@
-package com.example.weatherreport_perproject;
+package com.example.weatherreport_perproject.model;
 
 import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
 @Table(name = "weather")
@@ -14,6 +16,16 @@ public class WeatherForecast {
     private double temperature;
     @Column
     private double humidity;
+    @Column
+    private Date date;
+
+    public Date getDate(){
+        return date;
+    }
+
+    public void setDate(Date date){
+        this.date = date;
+    }
 
     public long getId(){
         return id;

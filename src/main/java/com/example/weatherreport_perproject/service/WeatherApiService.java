@@ -1,4 +1,4 @@
-package com.example.weatherreport_perproject.Services;
+package com.example.weatherreport_perproject.service;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

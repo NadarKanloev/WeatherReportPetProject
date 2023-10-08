@@ -1,7 +1,7 @@
-package com.example.weatherreport_perproject.Services;
+package com.example.weatherreport_perproject.service;
 
-import com.example.weatherreport_perproject.WeatherForecast;
-import com.example.weatherreport_perproject.Repositories.WeatherForecastRepository;
+import com.example.weatherreport_perproject.model.WeatherForecast;
+import com.example.weatherreport_perproject.repository.WeatherForecastRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +18,11 @@ public class WeatherForecastService{
 
     public Optional<WeatherForecast> getWeatherByCity(String city){
         return forecastRepository.findByCity(city);
+    }
+
+    public WeatherForecast getLatestWeatherForecast(String city){
+        Optional<WeatherForecast> latestWeatherOptional = forecastRepository.findFirstByCityOrderByDateDesc(city);
+        return latestWeatherOptional.orElse(null);
     }
 }
 

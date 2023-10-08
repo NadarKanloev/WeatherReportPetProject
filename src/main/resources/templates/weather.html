@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Погода в Лондоне</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .weather-container {
+      text-align: center;
+    }
+
+    .temperature {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .description {
+      font-size: 1.5em;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+<h1>Weather Data for <span th:text="${city}"></span>:</h1>
+<p>Temperature: <span th:text="${temperature}"></span>°C</p>
+<p>Humidity: <span th:text="${humidity}"></span>%</p>
+</body>
+
+</html>
