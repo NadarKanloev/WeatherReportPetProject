@@ -50,8 +50,24 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
+        .submit-button-two {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
         .submit-button:hover {
+            background-color: #45a049;
+        }
+        .submit-button-two:hover {
             background-color: #45a049;
         }
     </style>
@@ -61,8 +77,47 @@
 <div class="container">
     <div class="welcome-message">ДОБРО ПОЖАЛОВАТЬ, ВЫБЕРИТЕ ГОРОД</div>
     <input class="city-input" type="text" placeholder="Введите ваш город">
-    <button class="submit-button">Узнать погоду</button>
+    <button class="submit-button-two">Узнать погоду</button>
+    <a href="weather" id="weather-link">
+        <button class="submit-button">Показать</button>
+    </a>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('.submit-button-two').click(function() {
+            var city = $('.city-input').val();
+
+            $.ajax({
+                type: 'GET',
+                url: '/weather/' + city,
+                success: function(data) {
+                    var weatherData = JSON.parse(data);
+
+                    var temperature = weatherData.temperature;
+                    var humidity = weatherData.humidity;
+
+                    $('.weather-container').html('<h1>Прогноз погоды для города ' + city + ':</h1>' +
+                        '<div class="temperature">Температура: ' + temperature + '°C</div>' +
+                        '<p>Влажность: ' + humidity + '%</p>');
+                }
+            });
+        });
+    });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var cityInput = document.querySelector('.city-input');
+        var weatherLink = document.getElementById('weather-link');
+
+        cityInput.addEventListener('input', function() {
+            var city = cityInput.value;
+
+            weatherLink.href = 'weatherForecast/' + city;
+        });
+    });
+</script>
 </body>
 
 </html>

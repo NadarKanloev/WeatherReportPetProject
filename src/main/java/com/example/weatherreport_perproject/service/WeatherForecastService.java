@@ -25,5 +25,3 @@ public class WeatherForecastService{
         return latestWeatherOptional.orElse(null);
     }
 }
-
-

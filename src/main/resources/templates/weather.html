@@ -7,7 +7,7 @@
   <title>Погода в Лондоне</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background-color: #f9f9f9;
       margin: 0;
       padding: 0;
@@ -19,11 +19,15 @@
     }
 
     .weather-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
 
     .temperature {
-      font-size: 2em;
+      font-size: 3em;
       margin-bottom: 20px;
       color: #333;
     }
@@ -31,14 +35,31 @@
     .description {
       font-size: 1.5em;
       color: #888;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 2em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #555;
+      margin: 10px 0;
     }
   </style>
 </head>
 
 <body>
-<h1>Weather Data for <span th:text="${city}"></span>:</h1>
-<p>Temperature: <span th:text="${temperature}"></span>°C</p>
-<p>Humidity: <span th:text="${humidity}"></span>%</p>
+<div class="weather-container">
+  <h1>Прогноз погоды для города <span th:text="${city}"></span>:</h1>
+  <div class="temperature">
+    Температура: <span th:text="${temperature}"></span>°C
+  </div>
+  <p>Влажность: <span th:text="${humidity}"></span>%</p>
+</div>
 </body>
 
 </html>

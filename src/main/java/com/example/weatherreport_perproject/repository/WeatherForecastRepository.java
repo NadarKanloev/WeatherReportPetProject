@@ -9,6 +9,5 @@ import java.util.Optional;
 @Repository
 public interface WeatherForecastRepository extends JpaRepository<WeatherForecast, Long> {
     Optional<WeatherForecast> findByCity(String city);
-
     Optional<WeatherForecast> findFirstByCityOrderByDateDesc(String city);
 }
